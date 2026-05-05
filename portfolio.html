@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Lab | Portfolio</title>
+    <meta name="description" content="오로라랩의 전체 포트폴리오. GIF 모션 상세페이지 전문 디자인 스튜디오의 결과물을 확인하세요.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;900&family=Outfit:wght@300;900&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css?v=3">
+    <style>
+        /* ── Portfolio Page Specific Styles ── */
+        .portfolio-page {
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        /* Page Hero Header */
+        .pf-page-hero {
+            text-align: center;
+            padding: 40px 5% 30px;
+            position: relative;
+        }
+
+        .pf-page-badge {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            color: var(--primary);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .pf-page-title {
+            font-family: var(--font-heading);
+            font-size: clamp(3.5rem, 8vw, 8rem);
+            font-weight: 900;
+            line-height: 1.0;
+            letter-spacing: -3px;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .pf-page-sub {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.5);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pf-page-sub span {
+            color: var(--secondary);
+        }
+
+        /* Divider */
+        .pf-divider {
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), transparent);
+            margin: 50px auto;
+        }
+
+        /* 3x3 Full Grid */
+        .pf-full-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 0 5% 100px;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        /* Card Counter Label */
+        .pf-count-label {
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.3);
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+
+        /* Back Button */
+        .back-btn-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: 60px 5% 0;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 36px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 100px;
+            color: rgba(255,255,255,0.6);
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-btn:hover {
+            background: rgba(163,102,255,0.15);
+            border-color: var(--primary);
+            color: #fff;
+            transform: translateX(-4px);
+        }
+
+        .back-arrow {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-btn:hover .back-arrow {
+            transform: translateX(-4px);
+        }
+
+        /* Stagger fade-in for cards */
+        @keyframes cardReveal {
+            from { opacity: 0; transform: translateY(40px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .pf-full-grid .pf-card {
+            animation: cardReveal 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .pf-full-grid .pf-card:nth-child(1) { animation-delay: 0.05s; }
+        .pf-full-grid .pf-card:nth-child(2) { animation-delay: 0.12s; }
+        .pf-full-grid .pf-card:nth-child(3) { animation-delay: 0.19s; }
+        .pf-full-grid .pf-card:nth-child(4) { animation-delay: 0.26s; }
+        .pf-full-grid .pf-card:nth-child(5) { animation-delay: 0.33s; }
+        .pf-full-grid .pf-card:nth-child(6) { animation-delay: 0.40s; }
+        .pf-full-grid .pf-card:nth-child(7) { animation-delay: 0.47s; }
+        .pf-full-grid .pf-card:nth-child(8) { animation-delay: 0.54s; }
+        .pf-full-grid .pf-card:nth-child(9) { animation-delay: 0.61s; }
+
+        /* Page transition overlay */
+        .page-transition {
+            position: fixed;
+            inset: 0;
+            background: #000;
+            z-index: 99998;
+            pointer-events: none;
+            animation: pageIn 0.6s ease forwards;
+        }
+
+        @keyframes pageIn {
+            from { opacity: 1; }
+            to   { opacity: 0; }
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .pf-full-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+                padding: 0 4% 60px;
+            }
+            .pf-page-title { font-size: clamp(2.5rem, 10vw, 5rem); letter-spacing: -1px; }
+        }
+
+        @media (max-width: 560px) {
+            .pf-full-grid { grid-template-columns: 1fr; }
+            .pf-page-hero { padding: 60px 5% 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- Background Engine -->
+    <div class="bg-engine">
+        <div class="bg-logo"></div>
+    </div>
+
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+
+    <!-- Ticker Top -->
+    <div class="top-ticker">
+        <div class="track">
+            <span>✧ DESIGN BEYOND DIMENSIONS</span>
+            <span>✦</span> <span class="glow-text">CREATING DIGITAL UNIVERSES</span>
+            <span>✦</span> <span>HIGH-END INTERACTION</span>
+            <span>✧</span> <span class="glow-text">AURORA LAB.</span>
+            <span>✧ DESIGN BEYOND DIMENSIONS</span>
+            <span>✦</span> <span class="glow-text">CREATING DIGITAL UNIVERSES</span>
+            <span>✦</span> <span>HIGH-END INTERACTION</span>
+            <span>✧</span> <span class="glow-text">AURORA LAB.</span>
+            <span>✧ DESIGN BEYOND DIMENSIONS</span>
+            <span>✦</span> <span class="glow-text">CREATING DIGITAL UNIVERSES</span>
+            <span>✦</span> <span>HIGH-END INTERACTION</span>
+            <span>✧</span> <span class="glow-text">AURORA LAB.</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <img src="images/logo.png" alt="Aurora Lab" class="nav-logo">
+        <nav class="nav-links">
+            <a href="index.html#about" class="magnetic-btn">ABOUT</a>
+            <a href="portfolio.html" class="magnetic-btn">WORKS</a>
+            <a href="index.html#pricing" class="magnetic-btn">PRICING</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="portfolio-page">
+
+            <!-- Page Hero -->
+            <div class="pf-page-hero">
+                <span class="pf-page-badge">✦ 01 // PORTFOLIO — ALL WORKS</span>
+                <h1 class="pf-page-title">SELECTED<br>WORKS.</h1>
+                <p class="pf-page-sub">
+                    오로라랩이 만든 결과물은 단순한 이미지가 아닙니다.<br>
+                    브랜드 가치를 끌어올리고, <span>구매까지 이뤄지게 만드는 전략</span>입니다.
+                </p>
+                <div class="pf-divider"></div>
+                <p class="pf-count-label">TOTAL 09 PROJECTS</p>
+            </div>
+
+            <!-- 3x3 Portfolio Grid -->
+            <div class="pf-full-grid">
+
+                <!-- Card 1 -->
+                <div class="pf-card video-card">
+                    <div class="pf-thumb video-container">
+                        <div class="video-slider-wrapper">
+                            <video data-src="images/11.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/12.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/13.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/11.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="pf-card video-card">
+                    <div class="pf-thumb video-container">
+                        <div class="video-slider-wrapper">
+                            <video data-src="images/21.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/22.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/23.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/21.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="pf-card video-card">
+                    <div class="pf-thumb video-container">
+                        <div class="video-slider-wrapper">
+                            <video data-src="images/31.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/32.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/33.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/31.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="pf-card video-card">
+                    <div class="pf-thumb video-container">
+                        <div class="video-slider-wrapper">
+                            <video data-src="images/41.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/42.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/41.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/41.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="pf-card video-card">
+                    <div class="pf-thumb video-container">
+                        <div class="video-slider-wrapper video-slider-5">
+                            <video data-src="images/51.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/52.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/53.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/54.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/51.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="pf-card video-card">
+                    <div class="pf-thumb video-container">
+                        <div class="video-slider-wrapper">
+                            <video data-src="images/61.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/62.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/63.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/61.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="pf-card video-card">
+                    <div class="pf-thumb video-container">
+                        <div class="video-slider-wrapper">
+                            <video data-src="images/71.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/72.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/73.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/71.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="pf-card video-card">
+                    <div class="pf-thumb video-container">
+                        <div class="video-slider-wrapper">
+                            <video data-src="images/81.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/82.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/83.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/81.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="pf-card video-card">
+                    <div class="pf-thumb video-container">
+                        <div class="video-slider-wrapper">
+                            <video data-src="images/91.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/92.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/93.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/91.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Back Button -->
+            <div class="back-btn-wrapper">
+                <a href="index.html" class="back-btn magnetic-btn">
+                    <span class="back-arrow">←</span> 메인으로 돌아가기
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Kakao FAB -->
+    <a href="https://open.kakao.com/o/sgb5nVmi" target="_blank" rel="noopener noreferrer" class="kakao-fab">
+        <span class="fab-text">카카오톡 문의하기</span>
+        <div class="kakao-icon">TALK</div>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/aurora-engine.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // 1. Smooth Scroll
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smooth: true,
+            });
+            function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+            requestAnimationFrame(raf);
+
+            if (typeof ScrollTrigger !== 'undefined') {
+                lenis.on('scroll', ScrollTrigger.update);
+                gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+                gsap.ticker.lagSmoothing(0);
+            }
+
+            // 2. Custom Cursor
+            const cursor = document.getElementById("cursor");
+            const cursorX = gsap.quickTo(cursor, "left", { duration: 0.4, ease: "power3" });
+            const cursorY = gsap.quickTo(cursor, "top",  { duration: 0.4, ease: "power3" });
+            window.addEventListener("mousemove", (e) => { cursorX(e.clientX); cursorY(e.clientY); });
+
+
+
+            // 3. Video Lazy Loading (Intersection Observer)
+            const videoObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const video = entry.target;
+                        const src = video.getAttribute('data-src');
+                        if (src) {
+                            video.src = src;
+                            video.load();
+                            video.removeAttribute('data-src');
+                        }
+                        observer.unobserve(video);
+                    }
+                });
+            }, { rootMargin: '200px' });
+
+            document.querySelectorAll('video[data-src]').forEach(v => videoObserver.observe(v));
+
+            // 4. Card Expansion Logic (Full Screen Zoom)
+            const pfCards = document.querySelectorAll('.pf-card');
+            pfCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    if (card.classList.contains('expanded')) {
+                        const state = card.getAttribute('data-flip-state');
+                        const startRect = JSON.parse(state);
+                        const backdrop = document.querySelector('.pf-backdrop');
+                        if (backdrop) {
+                            gsap.to(backdrop, { opacity: 0, duration: 0.4, onComplete: () => backdrop.remove() });
+                        }
+                        const nav = document.querySelector('.pf-exp-nav');
+                        if (nav) {
+                            gsap.to(nav, { opacity: 0, duration: 0.3, onComplete: () => nav.remove() });
+                        }
+                        gsap.to(card, {
+                            top: startRect.top, left: startRect.left,
+                            width: startRect.width, height: startRect.height,
+                            borderRadius: "16px", duration: 0.6, ease: "expo.inOut",
+                            onComplete: () => {
+                                card.classList.remove('expanded');
+                                card.style.cssText = "";
+                            }
+                        });
+                    } else {
+                        const rect = card.getBoundingClientRect();
+                        card.setAttribute('data-flip-state', JSON.stringify({
+                            top: rect.top, left: rect.left,
+                            width: rect.width, height: rect.height
+                        }));
+                        const vh = window.innerHeight;
+                        const vw = window.innerWidth;
+                        const targetH = vh * 0.9;
+                        const targetW = targetH * (4/5);
+                        const targetT = (vh - targetH) / 2;
+                        const targetL = (vw - targetW) / 2;
+
+                        const backdrop = document.createElement('div');
+                        backdrop.className = 'pf-backdrop';
+                        document.body.appendChild(backdrop);
+                        gsap.to(backdrop, { opacity: 1, duration: 0.5 });
+
+                        const navContainer = document.createElement('div');
+                        navContainer.className = 'pf-exp-nav';
+                        navContainer.innerHTML = `
+                            <div class="pf-nav-btn prev"><span><</span></div>
+                            <div class="pf-nav-btn next"><span>></span></div>
+                        `;
+                        document.body.appendChild(navContainer);
+
+                        card.style.position = 'fixed';
+                        card.style.top = rect.top + 'px';
+                        card.style.left = rect.left + 'px';
+                        card.style.width = rect.width + 'px';
+                        card.style.height = rect.height + 'px';
+                        card.style.zIndex = '9999';
+                        card.classList.add('expanded');
+
+                        gsap.to(card, {
+                            top: targetT, left: targetL,
+                            width: targetW, height: targetH,
+                            borderRadius: "24px", duration: 0.8, ease: "expo.out",
+                            onComplete: () => {
+                                gsap.to(navContainer, { opacity: 1, duration: 0.4 });
+                            }
+                        });
+
+                        // Slider Logic
+                        let currentIndex = 0;
+                        const wrapper = card.querySelector('.video-slider-wrapper');
+                        const videos = wrapper.querySelectorAll('video');
+                        const videoCount = videos.length;
+
+                        const updateSlider = () => {
+                            gsap.to(wrapper, { x: `-${currentIndex * (100 / videoCount)}%`, duration: 0.6, ease: "power2.inOut" });
+                            const targetVideo = videos[currentIndex];
+                            if (targetVideo.getAttribute('data-src')) {
+                                targetVideo.src = targetVideo.getAttribute('data-src');
+                                targetVideo.load();
+                                targetVideo.removeAttribute('data-src');
+                            }
+                        };
+
+                        navContainer.querySelector('.next').addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            currentIndex = (currentIndex + 1) % videoCount;
+                            updateSlider();
+                        });
+
+                        navContainer.querySelector('.prev').addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            currentIndex = (currentIndex - 1 + videoCount) % videoCount;
+                            updateSlider();
+                        });
+
+                        backdrop.addEventListener('click', () => {
+                            gsap.to(navContainer, { opacity: 0, duration: 0.3, onComplete: () => navContainer.remove() });
+                            card.click();
+                        });
+                    }
+                });
+            });
+
+        });
+    </script>
+
+    <!-- Glassy Filter -->
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+        <filter id="nukki-filter" color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix" values="1 0 0 0 0
+                                                 0 1 0 0 0
+                                                 0 0 1 0 0
+                                                 0.8 0.8 0.8 0 0" result="mask"/>
+            <feComposite operator="in" in="SourceGraphic" in2="mask" />
+            <feColorMatrix type="saturate" values="0.4" />
+            <feComponentTransfer>
+                <feFuncR type="gamma" exponent="1.0" amplitude="1.2"/>
+                <feFuncG type="gamma" exponent="1.0" amplitude="1.2"/>
+                <feFuncB type="gamma" exponent="1.0" amplitude="1.2"/>
+            </feComponentTransfer>
+        </filter>
+    </svg>
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Lab | High-End Digital Experience</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;900&family=Outfit:wght@300;900&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css?v=3">
+</head>
+<body>
+    
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- Background Engine (Canvas-based Aurora v2) -->
+    <div class="bg-engine">
+        <div class="bg-logo"></div>
+        <!-- Canvas aurora + stars injected by aurora-engine.js -->
+    </div>
+
+    <!-- Ticker Top (Cosmic Theme) -->
+    <div class="top-ticker">
+        <div class="track">
+            <span>✧ DESIGN BEYOND DIMENSIONS</span>
+            <span>✦</span> <span class="glow-text">CREATING DIGITAL UNIVERSES</span>
+            <span>✦</span> <span>HIGH-END INTERACTION</span>
+            <span>✧</span> <span class="glow-text">AURORA LAB.</span>
+            <span>✧ DESIGN BEYOND DIMENSIONS</span>
+            <span>✦</span> <span class="glow-text">CREATING DIGITAL UNIVERSES</span>
+            <span>✦</span> <span>HIGH-END INTERACTION</span>
+            <span>✧</span> <span class="glow-text">AURORA LAB.</span>
+            <span>✧ DESIGN BEYOND DIMENSIONS</span>
+            <span>✦</span> <span class="glow-text">CREATING DIGITAL UNIVERSES</span>
+            <span>✦</span> <span>HIGH-END INTERACTION</span>
+            <span>✧</span> <span class="glow-text">AURORA LAB.</span>
+            <span>✧ DESIGN BEYOND DIMENSIONS</span>
+            <span>✦</span> <span class="glow-text">CREATING DIGITAL UNIVERSES</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <img src="images/logo.png" alt="Aurora Lab" class="nav-logo">
+        <nav class="nav-links">
+            <a href="#about" class="magnetic-btn">ABOUT</a>
+            <a href="portfolio.html" class="magnetic-btn">WORKS</a>
+            <a href="#pricing" class="magnetic-btn">PRICING</a>
+        </nav>
+    </header>
+
+    <main id="app-container">
+        
+        <!-- Cinematic Hero (Extended) -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-3d-logo-container">
+                    <div class="logo-3d-stack" id="logoStack"></div>
+                </div>
+                
+                <div class="hero-subcopy">
+                    <p class="desc">스크롤을 멈추게 하는 3초의 마법<br>
+                    <span class="glow-text">1:1 브랜드 맞춤형 GIF 상세페이지 제작 전문</span><br>
+                    디자인 연구소, 오로라랩</p>
+                </div>
+
+                <!-- Animated Counters -->
+                <div class="hero-metrics">
+                    <div class="metric-item">
+                        <span class="m-label">프로젝트</span>
+                        <span class="m-value"><span class="counter" data-target="320">0</span>+</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="m-label">재의뢰</span>
+                        <span class="m-value"><span class="counter" data-target="250">0</span>+</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="m-label">만족도</span>
+                        <span class="m-value"><span class="counter" data-target="100">0</span>%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Client Ticker -->
+            <div class="client-ticker">
+                <div class="c-track">
+                    <span>국민흙침대</span><span>•</span><span>진공밀폐용기</span><span>•</span><span>헤어샴푸</span><span>•</span><span>순살생선</span><span>•</span><span>일회용 수세미</span><span>•</span><span>천일염</span><span>•</span><span>인덕션</span><span>•</span><span>캠핑쿨러</span><span>•</span><span>뎅유지 쌍화차</span><span>•</span><span>쿠킹후드</span><span>•</span><span>디퓨저</span><span>•</span><span>매실애사비</span><span>•</span><span>잡초방지부직포</span><span>•</span><span>퍼퓸세정티슈</span><span>•</span><span>가습마스크</span><span>•</span><span>발아보리차</span><span>•</span><span>멀티핸들</span><span>•</span>
+                    <span>국민흙침대</span><span>•</span><span>진공밀폐용기</span><span>•</span><span>헤어샴푸</span><span>•</span><span>순살생선</span><span>•</span><span>일회용 수세미</span><span>•</span><span>천일염</span><span>•</span><span>인덕션</span><span>•</span><span>캠핑쿨러</span><span>•</span><span>뎅유지 쌍화차</span><span>•</span><span>쿠킹후드</span><span>•</span><span>디퓨저</span><span>•</span><span>매실애사비</span><span>•</span><span>잡초방지부직포</span><span>•</span><span>퍼퓸세정티슈</span><span>•</span><span>가습마스크</span><span>•</span><span>발아보리차</span><span>•</span><span>멀티핸들</span><span>•</span>
+                </div>
+            </div>
+
+            <div class="hero-scroll-indicator">
+                <div class="line"></div>
+                <span>SCROLL TO EXPLORE</span>
+            </div>
+        </section>
+
+        <!-- Pain Point Section (Opal-inspired empathy copy) -->
+        <section class="painpoint-section glass-panel">
+            <div class="container">
+                <div class="section-badge">QUESTION //</div>
+                <div class="text-mask"><h2 class="section-title">혹시 이런 경험,<br>있지 않으세요?</h2></div>
+                <div class="pain-grid">
+                    <div class="pain-item spotlight-card">
+                        <span class="pain-num">01</span>
+                        <p>똑같은 템플릿에 끼워맞춘<br><strong>공장형 상세페이지</strong></p>
+                    </div>
+                    <div class="pain-item spotlight-card">
+                        <span class="pain-num">02</span>
+                        <p>고객의 시선을 끌지 못하는<br><strong>지루한 페이지 구성</strong></p>
+                    </div>
+                    <div class="pain-item spotlight-card">
+                        <span class="pain-num">03</span>
+                        <p>브랜드 아이덴티티가 전혀<br><strong>드러나지 않는 톤앤무드</strong></p>
+                    </div>
+                    <div class="pain-item spotlight-card">
+                        <span class="pain-num">04</span>
+                        <p>상세페이지를 여러 번 바꿨는데도<br><strong>매출은 그대로</strong></p>
+                    </div>
+                </div>
+                
+
+            </div>
+        </section>
+
+        <!-- Solution Section (Opal Glow & Interaction) -->
+        <section class="solution-section">
+            <div class="section-badge">SOLUTION //</div>
+            <div class="text-mask"><h2 class="section-title">왜 오로라랩과<br>함께 해야 할까요.</h2></div>
+            <p class="solution-sub">[오로라랩의 핵심 디자인 솔루션]</p>
+            
+            <div class="solution-grid">
+                <!-- Solution Card 1 -->
+                <div class="sol-card">
+                    <div class="sol-icon">✦</div>
+                    <div class="sol-content">
+                        <h3>1:1 맞춤형<br>디자인 설계</h3>
+                        <p>템플릿에 끼워 맞춘 공장형 디자인이 아닌,<br>
+                        브랜드 <span class="highlight">아이덴티티를 살린 맞춤형 디자인</span>을 제안합니다.</p>
+                    </div>
+                </div>
+
+                <!-- Solution Card 2 -->
+                <div class="sol-card special">
+                    <div class="sol-icon">✧</div>
+                    <div class="sol-content">
+                        <h3>GIF 모션<br>디자인 최적화</h3>
+                        <p>소비자의 시선을 사로잡는 모션으로 정적 이미지 대비<br>
+                        <span class="highlight">이탈률을 3배 더 줄이는 비주얼 경험</span>을 제공합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visual Portfolio Grid (Centered & Expandable) -->
+        <section id="works" class="portfolio-section glass-panel">
+            <div class="section-badge">01 // PORTFOLIO</div>
+            <div class="text-mask"><h2 class="section-title">SELECTED<br>WORKS.</h2></div>
+            <p class="section-desc mt-20">오로라랩이 만든 결과물은 단순한 이미지가 아닙니다.<br>
+            브랜드 가치를 끌어올리고, 구매까지 이뤄지게 만드는 전략입니다.</p>
+
+            <!-- 3-Column Portfolio Grid (Initial 3x1) -->
+            <div class="pf-grid mt-50">
+                <div class="pf-card video-card">
+                    <div class="pf-thumb video-container">
+                        <div class="video-slider-wrapper">
+                            <video data-src="images/11.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/12.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/13.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/11.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="pf-card video-card">
+                    <div class="pf-thumb video-container">
+                        <div class="video-slider-wrapper">
+                            <video data-src="images/21.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/22.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/23.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/21.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="pf-card video-card">
+                    <div class="pf-thumb video-container">
+                        <div class="video-slider-wrapper">
+                            <video data-src="images/31.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/32.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/33.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/31.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hidden Cards for 3x3 Expansion -->
+                <div class="pf-card video-card hidden-card">
+                    <div class="pf-thumb video-container">
+                        <div class="video-slider-wrapper">
+                            <video data-src="images/41.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/42.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/41.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/41.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf-card video-card hidden-card">
+                    <div class="pf-thumb video-container">
+                        <div class="video-slider-wrapper video-slider-5">
+                            <video data-src="images/51.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/52.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/53.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/54.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/51.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf-card video-card hidden-card">
+                    <div class="pf-thumb video-container">
+                        <div class="video-slider-wrapper">
+                            <video data-src="images/61.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/62.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/63.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/61.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf-card video-card hidden-card">
+                    <div class="pf-thumb video-container">
+                        <div class="video-slider-wrapper">
+                            <video data-src="images/71.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/72.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/73.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                            <video data-src="images/71.mp4" autoplay muted loop playsinline preload="none" class="pf-video"></video>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf-card video-card hidden-card">
+                    <div class="pf-thumb video-container">
+                        <div class="video-slider-wrapper">
+                            <video src="images/81.mp4" autoplay muted loop playsinline class="pf-video"></video>
+                            <video src="images/82.mp4" autoplay muted loop playsinline class="pf-video"></video>
+                            <video src="images/83.mp4" autoplay muted loop playsinline class="pf-video"></video>
+                            <video src="images/81.mp4" autoplay muted loop playsinline class="pf-video"></video>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf-card video-card hidden-card">
+                    <div class="pf-thumb video-container">
+                        <div class="video-slider-wrapper">
+                            <video src="images/91.mov" autoplay muted loop playsinline class="pf-video"></video>
+                            <video src="images/92.mov" autoplay muted loop playsinline class="pf-video"></video>
+                            <video src="images/93.mov" autoplay muted loop playsinline class="pf-video"></video>
+                            <video src="images/91.mov" autoplay muted loop playsinline class="pf-video"></video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More Button -->
+            <div class="more-container mt-50">
+                <a href="portfolio.html" class="more-btn magnetic-btn">VIEW MORE +</a>
+            </div>
+        </section>
+
+        <!-- Team Introduction -->
+        <section id="team" class="team-section glass-panel">
+            <div class="team-header text-center" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                <div class="section-badge">02 // TEAM</div>
+                <div class="text-mask"><h2 class="section-title">오로라랩 소개</h2></div>
+                <p class="section-desc mt-20">디자인에 전략을 더하는 전문가 팀</p>
+            </div>
+            
+            <div class="team-grid mt-50">
+                <div class="team-member spotlight-card">
+                    <div class="spotlight-border"></div>
+                    <div class="profile-img-wrapper">
+                        <img src="images/profile_hansol.png" alt="hansol kim">
+                    </div>
+                    <div class="member-info">
+                        <h3>hansol kim</h3>
+                        <span class="role glow-text">대표 디자이너</span>
+                        <ul class="member-details">
+                            <li><span class="chk">✦</span> 소셜커머스 출신 경력 8년차</li>
+                            <li><span class="chk">✦</span> 홍익대학교 시각디자인 석사</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="team-plus-wrapper">
+                    <div class="spreading-line"></div>
+                    <div class="team-plus">
+                        <span class="plus-icon">+</span>
+                    </div>
+                </div>
+                
+                <div class="team-member spotlight-card">
+                    <div class="spotlight-border"></div>
+                    <div class="profile-img-wrapper">
+                        <img src="images/profile_yeonwoo.png" alt="Yeon woo lee">
+                    </div>
+                    <div class="member-info">
+                        <h3>Yeon woo lee</h3>
+                        <span class="role glow-text">시니어 디자이너</span>
+                        <ul class="member-details">
+                            <li><span class="chk">✦</span> 경력 5년차 시니어 디자이너</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6-Step Process -->
+        <section id="process" class="process-section glass-panel">
+            <div class="section-badge">04 // PROCESS</div>
+            <div class="text-mask"><h2 class="section-title">완성까지의<br>6단계 흐름.</h2></div>
+            
+            <div class="process-grid mt-50">
+                <div class="p-step spotlight-card"><div class="spotlight-border"></div>
+                    <span class="p-num">01.</span>
+                    <h4>상담</h4>
+                    <p>현재 운영중인 스토어 현황 분석 및 원하시는 컨셉, 방향성을 검토 후 상담을 진행합니다.</p>
+                </div>
+                <div class="p-step spotlight-card"><div class="spotlight-border"></div>
+                    <span class="p-num">02.</span>
+                    <h4>기획 <span style="font-size:0.85em; opacity:0.6;">(5-7일)</span></h4>
+                    <p>사전 인터뷰지를 통한 타겟 고객 분석과 핵심 소구점(USP)을 도출하는 전략적 기획문서를 제작합니다.</p>
+                </div>
+                <div class="p-step spotlight-card"><div class="spotlight-border"></div>
+                    <span class="p-num">03.</span>
+                    <h4>촬영 <span style="font-size:0.85em; opacity:0.6;">(5-7일)</span></h4>
+                    <p>기획안을 바탕으로 필요한 이미지와 영상촬영을 진행합니다.</p>
+                </div>
+                <div class="p-step spotlight-card"><div class="spotlight-border"></div>
+                    <span class="p-num">04.</span>
+                    <h4>디자인 <span style="font-size:0.85em; opacity:0.6;">(5-7일)</span></h4>
+                    <p>브랜드 아이덴티티를 반영한 디자인을 진행하고, 컨펌용 링크를 전달드립니다.</p>
+                </div>
+                <div class="p-step spotlight-card"><div class="spotlight-border"></div>
+                    <span class="p-num">05.</span>
+                    <h4>수정 <span style="font-size:0.85em; opacity:0.6;">(한달 무제한)</span></h4>
+                    <p>피드백을 반영한 수정을 진행합니다.</p>
+                </div>
+                <div class="p-step spotlight-card"><div class="spotlight-border"></div>
+                    <span class="p-num">06.</span>
+                    <h4>완성 <span style="font-size:0.85em; opacity:0.6;">(총 3주 이상~)</span></h4>
+                    <p>최종 시안 확정 후 원본 이미지를 전달드립니다.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Pricing Section (Redesigned) -->
+        <section id="pricing" class="pricing-section glass-panel">
+            <div class="section-badge">05 // PRICING DATA</div>
+            <div class="text-mask"><h2 class="section-title">미리보는 길이별<br>제작 단가.</h2></div>
+            <p class="section-desc mt-20">길이별로 단가가 상이하므로 자세한 상담을 통해 맞춤 견적서를 송부해 드리고 있습니다.</p>
+
+            <!-- Event Banner -->
+            <div class="event-banner mt-50">
+                <div class="event-banner-label">
+                    <span class="event-dot">●</span>
+                    <span class="event-title">곧 종료되는 이벤트</span>
+                </div>
+                <div class="event-items">
+                    <div class="event-item"><span class="event-chk">✓</span> 수정 한달 무제한</div>
+                    <div class="event-item"><span class="event-chk">✓</span> 썸네일 서비스</div>
+                    <div class="event-item"><span class="event-chk">✓</span> 원본 PSD 파일 무상 제공</div>
+                </div>
+            </div>
+
+            <!-- 4 Pricing Cards -->
+            <div class="new-pricing-deck mt-50">
+
+                <!-- Tier 1 -->
+                <div class="new-price-card">
+                    <div class="npc-size">
+                        <div class="npc-size-main">5섹션</div>
+                        <div class="npc-size-sub">세로 10,000px 이내</div>
+                    </div>
+                    <div class="npc-price">35<span class="npc-unit">만원</span></div>
+                    <div class="npc-vat">VAT 미포함</div>
+                    <div class="npc-divider"></div>
+                    <div class="npc-option">기획 추가 <span class="npc-add">+ 5만원</span></div>
+                    <a href="https://open.kakao.com/o/sgb5nVmi" target="_blank" class="npc-btn magnetic-btn">상담톡 문의</a>
+                </div>
+
+                <!-- Tier 2 -->
+                <div class="new-price-card">
+                    <div class="npc-size">
+                        <div class="npc-size-main">10섹션</div>
+                        <div class="npc-size-sub">세로 20,000px 이내</div>
+                    </div>
+                    <div class="npc-price">50<span class="npc-unit">만원</span></div>
+                    <div class="npc-vat">VAT 미포함</div>
+                    <div class="npc-divider"></div>
+                    <div class="npc-option">기획 추가 <span class="npc-add">+ 10만원</span></div>
+                    <a href="https://open.kakao.com/o/sgb5nVmi" target="_blank" class="npc-btn magnetic-btn">상담톡 문의</a>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="new-price-card">
+                    <div class="npc-size">
+                        <div class="npc-size-main">15섹션</div>
+                        <div class="npc-size-sub">세로 30,000px 이내</div>
+                    </div>
+                    <div class="npc-price">65<span class="npc-unit">만원</span></div>
+                    <div class="npc-vat">VAT 미포함</div>
+                    <div class="npc-divider"></div>
+                    <div class="npc-option">기획 추가 <span class="npc-add">+ 15만원</span></div>
+                    <a href="https://open.kakao.com/o/sgb5nVmi" target="_blank" class="npc-btn magnetic-btn">상담톡 문의</a>
+                </div>
+
+                <!-- Tier 4 -->
+                <div class="new-price-card">
+                    <div class="npc-size">
+                        <div class="npc-size-main">20섹션</div>
+                        <div class="npc-size-sub">세로 40,000px 이내</div>
+                    </div>
+                    <div class="npc-price">80<span class="npc-unit">만원</span></div>
+                    <div class="npc-vat">VAT 미포함</div>
+                    <div class="npc-divider"></div>
+                    <div class="npc-option">기획 추가 <span class="npc-add">+ 20만원</span></div>
+                    <a href="https://open.kakao.com/o/sgb5nVmi" target="_blank" class="npc-btn magnetic-btn">상담톡 문의</a>
+                </div>
+
+            </div>
+
+            <!-- Bottom Note -->
+            <p class="pricing-note mt-50">* 가로 860px 고정. 와디즈, 이벤트 페이지, 프로모션 페이지, 홈 배너 동일 *</p>
+
+        </section>
+
+
+        <!-- FAQ Accordion -->
+        <section id="faq" class="faq-section glass-panel">
+            <div class="section-badge">06 // FAQ</div>
+            <div class="text-mask"><h2 class="section-title">자주 묻는 질문.</h2></div>
+            
+            <div class="faq-container mt-50">
+                <div class="faq-item">
+                    <div class="faq-q">작업 기간은 얼마나 걸리나요? <span class="arrow">+</span></div>
+                    <div class="faq-a">
+                        <p>디자인 작업시 1차 시안까지는 일주일, 수정 과정을 포함한 완성까지 총 기간은 10-15일로 잡으시면 되며, 급한 일정은 별도 협의 가능합니다.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">브랜드 가이드라인이 없어도 되나요? <span class="arrow">+</span></div>
+                    <div class="faq-a">
+                        <p>네, 브랜드 분석을 통해 고유의 아이덴티티를 확립하며, 맞춤형 디자인을 제공해 드립니다.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">수정은 몇 번까지 가능한가요? <span class="arrow">+</span></div>
+                    <div class="faq-a">
+                        <p>1차 시안 받아보신 날로부터 1개월간 무제한입니다. 단, 전체 컨셉을 뒤엎는 수준의 수정은 제외됩니다.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">GIF 때문에 페이지가 무거워지지 않나요? <span class="arrow">+</span></div>
+                    <div class="faq-a">
+                        <p>최적화 작업을 통해 품질은 유지하면서 용량은 최소화합니다. 모바일 환경도 고려한 최적 용량으로 제작해 드립니다.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">완성본이 포트폴리오로 공개되나요? <span class="arrow">+</span></div>
+                    <div class="faq-a">
+                        <p>모든 작업물이 공개되는 것은 아니며, 포트폴리오 정리 후 일부만 공유됩니다. 원치 않으시면 사전에 말씀해 주세요.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">결제는 어떻게 진행되나요? <span class="arrow">+</span></div>
+                    <div class="faq-a">
+                        <p>상담을 통한 견적 산출 후 선금으로 진행하고 있으며, 세금계산서를 발행하고 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Footer -->
+        <section class="footer-section glass-panel text-center">
+            <p class="footer-sub">퀄리티 유지를 위해 예약제로 운영되며 한달 작업량에 제한을 두고 있습니다. 일정 여유 있게 문의 남겨주세요.</p>
+            <div class="text-mask"><h2 class="section-title">더 이상 고민하지 마세요.<br>결과로 보여드리겠습니다.</h2></div>
+            <a href="mailto:auroralab24@gmail.com" class="big-email magnetic-btn mt-50">지금 바로 무료 상담 시작하기 →</a>
+            <p class="mt-50" style="color:rgba(255,255,255,0.3); font-family:'Courier New';">Copyright © 2026 Aurora Lab. All rights reserved.</p>
+        </section>
+
+    </main>
+
+    <!-- Project Fullscreen Modal -->
+    <div id="projectModal" class="project-modal">
+        <div class="modal-nav">
+            <span class="modal-title">PROJECT_VIEWER //</span>
+            <button id="closeModal" class="magnetic-btn">CLOSE [X]</button>
+        </div>
+        <div class="modal-scroll-area" id="modalContent"></div>
+    </div>
+
+    <!-- Kakao Floating Action Button -->
+    <a href="https://open.kakao.com/o/sgb5nVmi" target="_blank" rel="noopener noreferrer" class="kakao-fab">
+        <span class="fab-text">카카오톡 문의하기</span>
+        <div class="kakao-icon">TALK</div>
+    </a>
+
+    <!-- Scripts: Lenis (Smooth Scroll), GSAP, Custom Data, and App Logic -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="data/projects.js"></script>
+    <script src="js/aurora-engine.js"></script>
+
+
+    <script src="js/script.js"></script>
+    <!-- Glassy Transparency & Color Preservation Filter -->
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+        <filter id="nukki-filter" color-interpolation-filters="sRGB">
+            <!-- Create a sharp but smooth alpha mask from luminosity -->
+            <feColorMatrix type="matrix" values="1 0 0 0 0
+                                                 0 1 0 0 0
+                                                 0 0 1 0 0
+                                                 0.8 0.8 0.8 0 0" result="mask"/>
+            <feComposite operator="in" in="SourceGraphic" in2="mask" />
+            <feColorMatrix type="saturate" values="0.4" />
+            <!-- Boost white/brightness levels -->
+            <feComponentTransfer>
+                <feFuncR type="gamma" exponent="1.0" amplitude="1.2"/>
+                <feFuncG type="gamma" exponent="1.0" amplitude="1.2"/>
+                <feFuncB type="gamma" exponent="1.0" amplitude="1.2"/>
+            </feComponentTransfer>
+        </filter>
+    </svg>
+
+</body>
+</html>
