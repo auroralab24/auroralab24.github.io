@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://auroralab24.github.io/auroralab/sitemap.xml
