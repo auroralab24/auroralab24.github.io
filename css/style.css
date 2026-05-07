@@ -1582,17 +1582,17 @@ body {
     .metric-item .m-value { font-size: 2.8rem !important; letter-spacing: -1px !important; }
     .metric-item .m-label { font-size: 0.65rem !important; margin-bottom: 2px !important; }
 
-    /* Scroll Indicator Mobile - Positioned below Metrics */
+    /* Scroll Indicator Mobile - Positioned below Metrics and Left Aligned */
     .hero-scroll-indicator {
         display: flex !important;
-        position: relative !important; /* Switch to relative to follow metrics flow */
+        position: relative !important;
         bottom: auto !important;
-        margin-top: 30px !important; /* Positioned directly below metrics */
-        left: 50% !important;
-        transform: translateX(-50%) !important;
+        margin-top: 40px !important;
+        left: 5% !important; /* Move to the left with slight padding */
+        transform: none !important; /* Remove center transform */
         z-index: 10 !important;
-        opacity: 0.6 !important;
-        justify-content: center !important;
+        opacity: 0.5 !important;
+        justify-content: flex-start !important;
     }
 
     /* Balanced spacing for hero on mobile */
