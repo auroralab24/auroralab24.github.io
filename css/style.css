@@ -1564,22 +1564,23 @@ body {
     .hero-3d-logo-container, .logo-3d-stack, .logo-layer {
         mix-blend-mode: screen !important;
         background: transparent !important;
+        opacity: 0.7 !important; /* Increased transparency for ethereal look */
     }
 
-    /* Hero Metrics Mobile Enhanced - Precise Gap Reduction */
+    /* Hero Metrics Mobile Enhanced - Refined Spacing */
     .hero-metrics { 
-        gap: 8px !important; 
+        gap: 15px !important; /* Slightly wider spacing between numbers */
         margin-top: 15px !important; 
-        margin-bottom: 10px !important; /* Drastically reduced gap (Red line) */
+        margin-bottom: 25px !important; /* Increased gap to prevent overlap */
         width: 100% !important; 
         justify-content: center !important; 
     }
     .metric-item .m-value { font-size: 2.8rem !important; letter-spacing: -1px !important; }
     .metric-item .m-label { font-size: 0.65rem !important; margin-bottom: 2px !important; }
 
-    /* Reduce spacing for all sections below hero on mobile */
-    .hero-section { min-height: auto !important; padding-bottom: 10px !important; }
-    .glass-panel { padding: 25px 5% !important; }
+    /* Balanced spacing for all sections below hero on mobile */
+    .hero-section { min-height: auto !important; padding-bottom: 20px !important; }
+    .glass-panel { padding: 30px 5% !important; }
 }
 }
 
