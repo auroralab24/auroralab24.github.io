@@ -1560,26 +1560,28 @@ body {
     .hero-subcopy { font-size: 1.05rem; margin-bottom: 20px; padding: 0 10px; }
     .hero-subcopy .glow-text { font-size: 0.95rem; word-break: keep-all; display: block; }
 
-    /* Mobile Logo Transparency Fix */
+    /* Mobile Logo - Premium Glassmorphism Effect */
     .hero-3d-logo-container, .logo-3d-stack, .logo-layer {
-        mix-blend-mode: screen !important;
+        mix-blend-mode: color-dodge !important; /* Bright, glowing glass look */
         background: transparent !important;
-        opacity: 0.7 !important; /* Increased transparency for ethereal look */
+        opacity: 1 !important; 
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
     }
 
-    /* Hero Metrics Mobile Enhanced - Refined Spacing */
+    /* Hero Metrics Mobile Enhanced - Precise Spacing */
     .hero-metrics { 
-        gap: 15px !important; /* Slightly wider spacing between numbers */
+        gap: 15px !important; 
         margin-top: 15px !important; 
-        margin-bottom: 25px !important; /* Increased gap to prevent overlap */
+        margin-bottom: 150px !important; /* Requested 150px Gap */
         width: 100% !important; 
         justify-content: center !important; 
     }
     .metric-item .m-value { font-size: 2.8rem !important; letter-spacing: -1px !important; }
     .metric-item .m-label { font-size: 0.65rem !important; margin-bottom: 2px !important; }
 
-    /* Balanced spacing for all sections below hero on mobile */
-    .hero-section { min-height: auto !important; padding-bottom: 20px !important; }
+    /* Balanced spacing for hero on mobile */
+    .hero-section { min-height: auto !important; padding-bottom: 0 !important; }
     .glass-panel { padding: 30px 5% !important; }
 }
 }
