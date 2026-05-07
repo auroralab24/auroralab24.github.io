@@ -1630,6 +1630,17 @@ body {
     .pc-feat { gap: 8px !important; }
     .pc-feat li { font-size: 0.8rem !important; }
 
+    /* Pricing Cards Mobile - Slimmed down vertical height */
+    .ref-price-card { 
+        padding: 20px 25px !important; /* Reduced vertical padding */
+    }
+    .pc-head h3 { font-size: 1.2rem !important; }
+    .pc-head p { margin-bottom: 10px !important; min-height: auto !important; }
+    .pc-price { margin-bottom: 15px !important; font-size: 1.6rem !important; }
+    .pc-btn { padding: 12px !important; margin-bottom: 15px !important; font-size: 0.9rem !important; }
+    .pc-feat.top-feat { padding-bottom: 12px !important; margin-bottom: 12px !important; gap: 6px !important; }
+    .pc-feat { gap: 6px !important; }
+
     /* Balanced spacing for hero on mobile */
     .hero-section { min-height: auto !important; padding-bottom: 0 !important; }
     .glass-panel { padding: 30px 5% !important; }
