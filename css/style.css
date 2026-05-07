@@ -269,6 +269,20 @@ body {
     overflow: visible !important;
 }
 
+.logo-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    will-change: transform;
+    opacity: 0.8; /* Base transparency for glass look */
+}
+
+
+
 .logo-3d-stack {
     position: relative;
     opacity: 1;
@@ -279,6 +293,7 @@ body {
     transform-style: preserve-3d;
     transition: transform 0.1s ease-out;
     margin: 0 auto;
+    filter: url(#nukki-filter);
 }
 
 .logo-layer {
@@ -1514,16 +1529,8 @@ body {
 .modal-scroll-area img { width: 100%; border: 1px solid var(--border); }
 
 @media (max-width: 768px) {
-    .hero-section { justify-content: flex-start; padding-top: 10vh; min-height: 85svh; height: auto; }
+    .hero-section { justify-content: flex-start; padding-top: 12vh; min-height: 100svh; height: auto; }
     .hero-title { font-size: 18vw; }
-    
-    /* Section Gap Reductions */
-    .glass-panel { padding: 30px 5%; }
-    .section-badge { margin-top: 40px; margin-bottom: 25px; }
-    .solution-section { padding: 60px 0; }
-    .team-section { padding: 60px 4vw; }
-    .solution-sub { margin-top: 40px; }
-    .portfolio-section { padding: 60px 0; }
     .process-grid { grid-template-columns: 1fr; gap: 15px; }
     .p-step { padding: 20px 25px; text-align: left; }
     .p-step .p-num { display: inline-block; margin-bottom: 0; margin-right: 10px; font-size: 1.2rem; }
@@ -1550,49 +1557,20 @@ body {
     * { cursor: auto !important; }
     .custom-cursor { display: none; }
 
-    /* Safari-specific Logo Transparency Fix (Isolated) */
-    .hero-3d-logo-container, .logo-3d-stack, .logo-layer {
-        background: transparent !important;
-        mix-blend-mode: screen !important;
-    }
+    /* Hero Metrics Mobile */
+    .hero-metrics { gap: 16px; margin-top: 30px; width: 100%; justify-content: space-around; padding: 0 16px; box-sizing: border-box; }
+    .metric-item .m-label { font-size: 0.7rem; letter-spacing: 1px; margin-bottom: 6px; }
+    .metric-item .m-value { font-size: 2.4rem; }
 
-    .hero-subcopy { font-size: 1.05rem !important; margin-bottom: 20px !important; padding: 0 10px !important; }
-    .hero-subcopy .glow-text { font-size: 0.95rem !important; word-break: keep-all !important; display: block !important; }
+    /* Hero scroll indicator hidden on mobile to prevent overlap */
+    .hero-scroll-indicator { display: none; }
 
-    /* Hero Metrics Mobile Enhanced - Strictly Isolated */
-    .hero-metrics { 
-        gap: 8px !important; 
-        margin-top: 15px !important; 
-        margin-bottom: 0 !important;
-        width: 100% !important; 
-        justify-content: center !important; 
-        padding: 0 10px !important; 
-    }
-    .metric-item .m-label { font-size: 0.6rem !important; letter-spacing: 0.5px !important; margin-bottom: 2px !important; }
-    .metric-item .m-value { font-size: 2.8rem !important; letter-spacing: -1px !important; }
+    /* Hero section mobile padding */
+    .hero-section { padding: 0 20px; box-sizing: border-box; overflow-x: hidden; }
 
-    /* Space reduction below metrics - 50% Reduction */
-    .hero-section { min-height: auto !important; padding-bottom: 30px !important; }
-    .glass-panel { padding: 30px 5% !important; }
-    .section-badge { margin-top: 30px !important; margin-bottom: 20px !important; }
-    
-    .pf-card {
-        height: auto !important;
-        padding: 0 !important;
-        background: transparent !important;
-        border: none !important;
-    }
-    .pf-thumb.video-container {
-        height: auto !important;
-        width: 100% !important;
-        border-radius: 20px;
-        overflow: hidden;
-    }
-    .pf-video {
-        width: 100% !important;
-        height: auto !important;
-        display: block;
-    }
+    /* Hero subcopy mobile */
+    .hero-subcopy { font-size: 1.1rem; margin-bottom: 40px; padding: 0 10px; }
+    .hero-subcopy .glow-text { font-size: 1rem; word-break: keep-all; display: block; }
 }
 
 /* Premium Aurora Glass Floating Button (Perfect Blend) */
