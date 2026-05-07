@@ -1570,13 +1570,24 @@ body {
     /* Hero Metrics Mobile Enhanced - Precise Spacing */
     .hero-metrics { 
         gap: 15px !important; 
-        margin-top: 15px !important; 
-        margin-bottom: 150px !important; /* Requested 150px Gap */
+        margin-top: 45px !important; /* Shifted down by 30px (original 15px + 30px) */
+        margin-bottom: 150px !important; 
         width: 100% !important; 
         justify-content: center !important; 
     }
     .metric-item .m-value { font-size: 2.8rem !important; letter-spacing: -1px !important; }
     .metric-item .m-label { font-size: 0.65rem !important; margin-bottom: 2px !important; }
+
+    /* Scroll Indicator Mobile Re-activation and Positioning */
+    .hero-scroll-indicator {
+        display: flex !important;
+        position: absolute !important;
+        bottom: -700px !important; /* Moved down by 700px */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 10 !important;
+        opacity: 0.6 !important;
+    }
 
     /* Balanced spacing for hero on mobile */
     .hero-section { min-height: auto !important; padding-bottom: 0 !important; }
