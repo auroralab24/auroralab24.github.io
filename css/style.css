@@ -1608,13 +1608,13 @@ body {
     .metric-item .m-value { font-size: 2.8rem !important; letter-spacing: -1px !important; }
     .metric-item .m-label { font-size: 0.65rem !important; margin-bottom: 2px !important; }
 
-    /* Scroll Indicator Mobile - Shifted 80px Up and Left Aligned */
+    /* Scroll Indicator Mobile - Almost Flush Left and Higher Up */
     .hero-scroll-indicator {
         display: flex !important;
         position: relative !important;
         bottom: auto !important;
-        margin-top: -50px !important; /* Shifted up significantly (relative to previous 30px) */
-        left: 5% !important; 
+        margin-top: -85px !important; /* Shifted up even more */
+        left: 2% !important; /* Almost flush left */
         transform: none !important; 
         z-index: 10 !important;
         opacity: 0.5 !important;
