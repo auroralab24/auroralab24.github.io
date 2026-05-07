@@ -1929,16 +1929,36 @@ body {
 }
 
 @media (max-width: 768px) {
-    .sol-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 20px;
-        gap: 20px;
+    .solution-section { padding: 100px 0 !important; }
+    .solution-sub { 
+        font-size: 1.1rem !important; 
+        padding: 8px 20px !important; 
+        margin-top: 40px !important;
+        white-space: nowrap !important; /* Prevent line breaks */
     }
-    .sol-icon { font-size: 2.5rem; }
-    .sol-content h3 { font-size: 1.8rem; margin-bottom: 15px; }
-    .sol-content p { font-size: 1.05rem; line-height: 1.6; }
-    .sol-content { text-align: center; }
+    
+    /* Restore branching lines on mobile */
+    .solution-grid { margin-top: 50px !important; gap: 20px !important; }
+    .solution-grid::before {
+        display: block !important;
+        width: 80% !important;
+        height: 20px !important;
+        transform: translate(-50%, -20px) !important;
+    }
+    .solution-sub::after {
+        height: 20px !important;
+        bottom: -20px !important;
+    }
+
+    .sol-card {
+        padding: 30px 15px !important;
+        gap: 15px !important;
+        border-radius: 30px !important;
+    }
+    .sol-icon { font-size: 2.2rem !important; }
+    .sol-content h3 { font-size: 1.6rem !important; margin-bottom: 12px !important; }
+    .sol-content p { font-size: 0.95rem !important; line-height: 1.5 !important; }
+    .highlight { padding: 2px 6px !important; font-size: 0.9rem !important; }
 }
 
 /* Expansion Navigation Arrows */
