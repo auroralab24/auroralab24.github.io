@@ -1530,10 +1530,10 @@ body {
     .hero-section { justify-content: flex-start; padding-top: 12vh; min-height: 100svh; height: auto; }
     .hero-title { font-size: 18vw; }
     .process-grid { grid-template-columns: 1fr; gap: 15px; }
-    .p-step { padding: 6px 10px !important; text-align: left; border-radius: 10px !important; min-height: auto !important; }
-    .p-step .p-num { display: inline-block; margin-bottom: 0; margin-right: 3px; font-size: 0.55rem !important; opacity: 0.35; }
-    .p-step h4 { display: inline-block; font-size: 0.62rem !important; margin-bottom: 2px !important; line-height: 1.2 !important; font-weight: 700 !important; letter-spacing: 0.02em !important; word-break: keep-all !important; }
-    .p-step p { font-size: 0.58rem !important; line-height: 1.3 !important; opacity: 0.4; word-break: keep-all !important; letter-spacing: 0.01em !important; }
+    .p-step { padding: 20px !important; text-align: left; border-radius: 20px !important; min-height: auto !important; }
+    .p-step .p-num { display: block; margin-bottom: 8px; font-size: 0.9rem !important; opacity: 0.8; }
+    .p-step h4 { display: block; font-size: 1.1rem !important; margin-bottom: 10px !important; line-height: 1.4 !important; font-weight: 700 !important; letter-spacing: 0 !important; word-break: normal !important; }
+    .p-step p { font-size: 0.85rem !important; line-height: 1.6 !important; opacity: 0.8; word-break: normal !important; }
     
     /* Portfolio Mobile - Final Fix: Video is the Card */
     .pf-item { 
