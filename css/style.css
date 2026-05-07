@@ -1630,16 +1630,19 @@ body {
     .pc-feat { gap: 8px !important; }
     .pc-feat li { font-size: 0.8rem !important; }
 
-    /* Pricing Cards Mobile - Slimmed down vertical height */
+    /* Pricing Cards Mobile - EXTREME Slim vertical height */
     .ref-price-card { 
-        padding: 20px 25px !important; /* Reduced vertical padding */
+        padding: 10px 15px !important; /* Bare minimum padding */
+        min-height: auto !important;
     }
-    .pc-head h3 { font-size: 1.2rem !important; }
-    .pc-head p { margin-bottom: 10px !important; min-height: auto !important; }
-    .pc-price { margin-bottom: 15px !important; font-size: 1.6rem !important; }
-    .pc-btn { padding: 12px !important; margin-bottom: 15px !important; font-size: 0.9rem !important; }
-    .pc-feat.top-feat { padding-bottom: 12px !important; margin-bottom: 12px !important; gap: 6px !important; }
-    .pc-feat { gap: 6px !important; }
+    .prm-top { margin-bottom: 5px !important; }
+    .pc-head h3 { font-size: 1.1rem !important; margin-bottom: 2px !important; }
+    .pc-head p { margin-bottom: 5px !important; min-height: auto !important; font-size: 0.75rem !important; }
+    .pc-price { margin-bottom: 8px !important; font-size: 1.3rem !important; }
+    .pc-btn { padding: 8px !important; margin-bottom: 10px !important; font-size: 0.85rem !important; }
+    .pc-feat.top-feat { padding-bottom: 8px !important; margin-bottom: 8px !important; gap: 4px !important; }
+    .pc-feat { gap: 4px !important; }
+    .pc-feat li { font-size: 0.72rem !important; }
 
     /* Balanced spacing for hero on mobile */
     .hero-section { min-height: auto !important; padding-bottom: 0 !important; }
