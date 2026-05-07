@@ -1530,10 +1530,10 @@ body {
     .hero-section { justify-content: flex-start; padding-top: 12vh; min-height: 100svh; height: auto; }
     .hero-title { font-size: 18vw; }
     .process-grid { grid-template-columns: 1fr; gap: 15px; }
-    .p-step { padding: 10px 15px !important; text-align: left; border-radius: 15px !important; min-height: auto !important; }
-    .p-step .p-num { display: inline-block; margin-bottom: 0; margin-right: 5px; font-size: 0.75rem !important; opacity: 0.5; }
-    .p-step h4 { display: inline-block; font-size: 0.85rem !important; margin-bottom: 4px !important; line-height: 1.2 !important; font-weight: 700 !important; letter-spacing: -0.02em !important; }
-    .p-step p { font-size: 0.72rem !important; line-height: 1.3 !important; opacity: 0.55; }
+    .p-step { padding: 8px 12px !important; text-align: left; border-radius: 12px !important; min-height: auto !important; }
+    .p-step .p-num { display: inline-block; margin-bottom: 0; margin-right: 4px; font-size: 0.65rem !important; opacity: 0.4; }
+    .p-step h4 { display: inline-block; font-size: 0.72rem !important; margin-bottom: 3px !important; line-height: 1.2 !important; font-weight: 700 !important; letter-spacing: -0.02em !important; word-break: keep-all !important; }
+    .p-step p { font-size: 0.65rem !important; line-height: 1.3 !important; opacity: 0.45; word-break: keep-all !important; }
     
     /* Portfolio Mobile - Total removal of card backgrounds/shadows for videos */
     .pf-item { 
