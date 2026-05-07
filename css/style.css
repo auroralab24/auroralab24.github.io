@@ -306,6 +306,17 @@ body {
     pointer-events: none;
     backface-visibility: hidden;
     will-change: transform;
+    /* iOS Transparency Fix */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    mix-blend-mode: plus-lighter;
+}
+
+@media (max-width: 768px) {
+    .logo-layer {
+        mix-blend-mode: normal !important;
+        opacity: 0.9 !important;
+    }
 }
 
 .logo-layer:first-child {
@@ -1529,8 +1540,16 @@ body {
 .modal-scroll-area img { width: 100%; border: 1px solid var(--border); }
 
 @media (max-width: 768px) {
-    .hero-section { justify-content: flex-start; padding-top: 12vh; min-height: 100svh; height: auto; }
+    .hero-section { justify-content: flex-start; padding-top: 10vh; min-height: 85svh; height: auto; }
     .hero-title { font-size: 18vw; }
+    
+    /* Section Gap Reductions */
+    .glass-panel { padding: 30px 5%; }
+    .section-badge { margin-top: 40px; margin-bottom: 25px; }
+    .solution-section { padding: 60px 0; }
+    .team-section { padding: 60px 4vw; }
+    .solution-sub { margin-top: 40px; }
+    .portfolio-section { padding: 60px 0; }
     .process-grid { grid-template-columns: 1fr; gap: 15px; }
     .p-step { padding: 20px 25px; text-align: left; }
     .p-step .p-num { display: inline-block; margin-bottom: 0; margin-right: 10px; font-size: 1.2rem; }
@@ -1558,9 +1577,9 @@ body {
     .custom-cursor { display: none; }
 
     /* Hero Metrics Mobile */
-    .hero-metrics { gap: 16px; margin-top: 30px; width: 100%; justify-content: space-around; padding: 0 16px; box-sizing: border-box; }
-    .metric-item .m-label { font-size: 0.7rem; letter-spacing: 1px; margin-bottom: 6px; }
-    .metric-item .m-value { font-size: 2.4rem; }
+    .hero-metrics { gap: 12px; margin-top: 20px; width: 100%; justify-content: space-around; padding: 0 10px; box-sizing: border-box; }
+    .metric-item .m-label { font-size: 0.65rem; letter-spacing: 1px; margin-bottom: 4px; }
+    .metric-item .m-value { font-size: 2.1rem; }
 
     /* Hero scroll indicator hidden on mobile to prevent overlap */
     .hero-scroll-indicator { display: none; }
@@ -1569,8 +1588,21 @@ body {
     .hero-section { padding: 0 20px; box-sizing: border-box; overflow-x: hidden; }
 
     /* Hero subcopy mobile */
-    .hero-subcopy { font-size: 1.1rem; margin-bottom: 40px; padding: 0 10px; }
-    .hero-subcopy .glow-text { font-size: 1rem; word-break: keep-all; display: block; }
+    .hero-subcopy { font-size: 1.05rem; margin-bottom: 30px; padding: 0 10px; }
+    .hero-subcopy .glow-text { font-size: 0.95rem; word-break: keep-all; display: block; }
+
+    /* Portfolio Video Card Aspect Ratio Fix */
+    .pf-thumb.video-container {
+        aspect-ratio: 16 / 9;
+        height: auto !important;
+    }
+    .video-slider-wrapper {
+        height: 100% !important;
+    }
+    .pf-video {
+        height: 100% !important;
+        object-fit: cover;
+    }
 }
 
 /* Premium Aurora Glass Floating Button (Perfect Blend) */
