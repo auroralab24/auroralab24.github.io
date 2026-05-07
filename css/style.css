@@ -1550,20 +1550,25 @@ body {
     * { cursor: auto !important; }
     .custom-cursor { display: none; }
 
-    /* Hero Metrics Mobile */
-    .hero-metrics { gap: 12px; margin-top: 20px; width: 100%; justify-content: space-around; padding: 0 10px; box-sizing: border-box; }
-    .metric-item .m-label { font-size: 0.65rem; letter-spacing: 1px; margin-bottom: 4px; }
-    .metric-item .m-value { font-size: 2.1rem; }
-
-    /* Hero scroll indicator hidden on mobile to prevent overlap */
-    .hero-scroll-indicator { display: none; }
-
-    /* Hero section mobile padding */
-    .hero-section { padding: 0 20px; box-sizing: border-box; overflow-x: hidden; }
-
-    /* Hero subcopy mobile */
-    .hero-subcopy { font-size: 1.05rem; margin-bottom: 30px; padding: 0 10px; }
+    .hero-subcopy { font-size: 1.05rem; margin-bottom: 20px; padding: 0 10px; }
     .hero-subcopy .glow-text { font-size: 0.95rem; word-break: keep-all; display: block; }
+
+    /* Hero Metrics Mobile Enhanced */
+    .hero-metrics { gap: 8px; margin-top: 15px; width: 100%; justify-content: center; padding: 0 10px; box-sizing: border-box; }
+    .metric-item { flex: 1; }
+    .metric-item .m-label { font-size: 0.6rem; letter-spacing: 0.5px; margin-bottom: 2px; }
+    .metric-item .m-value { font-size: 2.8rem; letter-spacing: -1px; }
+
+    /* Space reduction below metrics */
+    .hero-section { min-height: auto; padding-bottom: 40px; }
+    .glass-panel { padding: 30px 5%; }
+    
+    /* Safari-specific Logo Transparency Fix */
+    .hero-3d-logo-container, .logo-3d-stack, .logo-layer {
+        background: transparent !important;
+        mix-blend-mode: plus-lighter !important;
+        -webkit-mask-image: linear-gradient(#000, #000); /* Force subgrid rendering */
+    }
 
     .pf-card {
         height: auto !important;
