@@ -306,17 +306,6 @@ body {
     pointer-events: none;
     backface-visibility: hidden;
     will-change: transform;
-    /* iOS Transparency Fix */
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    mix-blend-mode: plus-lighter;
-}
-
-@media (max-width: 768px) {
-    .logo-layer {
-        mix-blend-mode: normal !important;
-        opacity: 0.9 !important;
-    }
 }
 
 .logo-layer:first-child {
@@ -1593,15 +1582,24 @@ body {
 
     /* Portfolio Video Card Aspect Ratio Fix */
     .pf-thumb.video-container {
-        aspect-ratio: 16 / 9;
         height: auto !important;
+        aspect-ratio: auto !important; /* Remove fixed ratio causing gaps */
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .video-slider-wrapper {
-        height: 100% !important;
+        height: auto !important;
     }
     .pf-video {
-        height: 100% !important;
-        object-fit: cover;
+        width: 100% !important;
+        height: auto !important; /* Let height follow content */
+        max-height: none !important;
+        object-fit: contain !important; /* Ensure full video is visible */
+    }
+    .pf-card {
+        height: auto !important;
+        padding-bottom: 0 !important;
     }
 }
 
