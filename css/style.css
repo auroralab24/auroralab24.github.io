@@ -1571,7 +1571,17 @@ body {
     .process-container .sticky-left { height: auto; position: static; border-right: none; border-bottom: 1px solid var(--border); }
     .compare-wrapper { flex-direction: column; }
     .pricing-wrapper { flex-direction: column; align-items: center; }
-    .price-card { width: 100%; }
+    .price-card { 
+        width: 100%; 
+        padding: 30px 20px !important; /* Reduced vertical padding */
+        min-height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important; /* Tighter internal spacing */
+    }
+    .price-card h3 { margin-bottom: 5px !important; }
+    .price-card .price { margin-bottom: 5px !important; }
+    .price-card .divider { margin: 15px 0 !important; }
     .project-grid { grid-template-columns: 1fr; }
     .navbar { display: none; }
     
