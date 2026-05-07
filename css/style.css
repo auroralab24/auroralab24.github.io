@@ -1630,6 +1630,13 @@ body {
     .pc-feat { gap: 8px !important; }
     .pc-feat li { font-size: 0.8rem !important; }
 
+    /* Pain Point Mobile - Targeted Shrinking */
+    .pain-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+    .pain-card { padding: 15px 10px !important; min-height: 120px !important; border-radius: 12px !important; }
+    .pain-card .pain-num { font-size: 0.8rem !important; margin-bottom: 8px !important; }
+    .pain-card p { font-size: 0.72rem !important; line-height: 1.4 !important; }
+    .pain-card p strong { font-size: 0.85rem !important; }
+
     /* Pricing Cards Mobile - EXTREME Slim vertical height */
     .ref-price-card { 
         padding: 10px 15px !important; /* Bare minimum padding */
