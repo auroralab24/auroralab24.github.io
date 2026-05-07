@@ -1608,17 +1608,18 @@ body {
     .metric-item .m-value { font-size: 2.8rem !important; letter-spacing: -1px !important; }
     .metric-item .m-label { font-size: 0.65rem !important; margin-bottom: 2px !important; }
 
-    /* Scroll Indicator Mobile - Almost Flush Left and Higher Up */
+    /* Scroll Indicator Mobile - Flush Left and Prevent Overlap */
     .hero-scroll-indicator {
         display: flex !important;
         position: relative !important;
         bottom: auto !important;
-        margin-top: -85px !important; /* Shifted up even more */
-        left: 2% !important; /* Almost flush left */
+        margin-top: -85px !important; 
+        left: 0% !important; /* Flush left */
         transform: none !important; 
         z-index: 10 !important;
         opacity: 0.5 !important;
         justify-content: flex-start !important;
+        margin-bottom: 120px !important; /* Added margin to prevent overlap with next section */
     }
 
     /* Pricing Cards Mobile - Reduced vertical height */
