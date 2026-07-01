@@ -1600,37 +1600,39 @@ body {
     .hero-subcopy { font-size: 1.05rem; margin-bottom: 20px; padding: 0 10px; }
     .hero-subcopy .glow-text { font-size: 0.95rem; word-break: keep-all; display: block; }
 
-    /* Mobile Logo - Preserving Glass Texture */
+    /* Mobile Logo - Restored Transparency */
     .logo-layer {
-        mix-blend-mode: normal !important; 
+        mix-blend-mode: screen !important; 
         background: transparent !important;
-        opacity: 0.5 !important; /* Lower opacity prevents white washout from stacked layers */
-        filter: saturate(1.2) brightness(1.1); /* Enhance glass refractivity colors */
+        opacity: 1 !important; 
+        filter: none !important; 
     }
 
     /* Hero Metrics Mobile Enhanced - Precise Spacing */
     .hero-metrics { 
-        gap: 15px !important; 
-        margin-top: 45px !important; /* Shifted down by 30px (original 15px + 30px) */
-        margin-bottom: 150px !important; 
+        gap: 12px !important; 
+        margin-top: 45px !important; 
+        margin-bottom: 120px !important; 
         width: 100% !important; 
         justify-content: center !important; 
     }
-    .metric-item .m-value { font-size: 2.8rem !important; letter-spacing: -1px !important; }
-    .metric-item .m-label { font-size: 0.65rem !important; margin-bottom: 2px !important; }
+    .metric-item .m-value { font-size: 2.1rem !important; letter-spacing: -1px !important; }
+    .metric-item .m-label { font-size: 0.75rem !important; margin-bottom: 2px !important; }
 
     /* Scroll Indicator Mobile - Flush Left and Prevent Overlap */
     .hero-scroll-indicator {
         display: flex !important;
         position: relative !important;
         bottom: auto !important;
-        margin-top: -85px !important; 
-        left: 0% !important; /* Flush left */
+        margin-top: -60px !important; 
+        left: 0 !important; 
+        align-self: flex-start !important; /* Fixes centering issue in flex container */
+        padding-left: 5% !important;
         transform: none !important; 
         z-index: 10 !important;
-        opacity: 0.5 !important;
+        opacity: 0.6 !important;
         justify-content: flex-start !important;
-        margin-bottom: 120px !important; /* Added margin to prevent overlap with next section */
+        margin-bottom: 100px !important; 
     }
 
     /* Pricing Cards Mobile - Reduced vertical height */
@@ -1779,10 +1781,10 @@ body {
 @media (max-width: 768px) {
     .kakao-fab {
         position: fixed !important;
-        bottom: 30px !important;
+        bottom: 20px !important;
         right: 20px !important;
-        width: 70px !important;
-        height: 70px !important;
+        width: 60px !important;
+        height: 60px !important;
         padding: 0 !important;
         justify-content: center !important;
         border-radius: 50% !important;
@@ -1801,9 +1803,9 @@ body {
     }
     
     .kakao-icon {
-        width: 48px !important;
-        height: 38px !important;
-        font-size: 0.95rem !important;
+        width: 42px !important;
+        height: 32px !important;
+        font-size: 0.8rem !important;
     }
 }
 
