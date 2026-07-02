@@ -116,7 +116,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const logoStack = document.getElementById("logoStack");
     if (logoStack) {
         const layers = 10; 
-        const imageSrc = "images/logo_3d.png";
+        const isMobile = window.innerWidth <= 768;
+        const imageSrc = isMobile ? "images/logo_3d_mobile.png" : "images/logo_3d.png";
+        
+        const staticLayer = logoStack.querySelector('.static-layer');
+        if (staticLayer) staticLayer.src = imageSrc;
         
         // Loop starts from 1 because layer 0 is already in HTML for immediate visibility
         for (let i = 1; i < layers; i++) {
