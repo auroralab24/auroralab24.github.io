@@ -1551,7 +1551,7 @@ body {
     .p-step p { display: block !important; font-size: 0.95rem !important; line-height: 1.6 !important; opacity: 0.7 !important; word-break: normal !important; }
     
     /* Portfolio Mobile - Video is the Card (Zero Ghosting) */
-    .pf-item { 
+    .pf-item, .pf-card { 
         height: auto !important; 
         min-height: auto !important; 
         background: transparent !important; 
@@ -1559,28 +1559,43 @@ body {
         border: none !important; 
         padding: 0 !important;
         margin: 0 !important;
-        overflow: visible !important; /* Allow video to define space */
+        overflow: visible !important; 
     }
-    .pf-video-card { 
+    .pf-video-card, .video-container { 
         height: auto !important; 
         background: transparent !important; 
         border: none !important; 
         padding: 0 !important;
         box-shadow: none !important;
         margin: 0 !important;
+        overflow: hidden !important;
+        border-radius: 12px !important;
+    }
+    .video-slider-wrapper {
+        height: auto !important;
     }
     .pf-video { 
         width: 100% !important;
         height: auto !important; 
         display: block !important;
         border-radius: 12px !important; 
-        object-fit: contain !important; /* Ensure full video is visible without clipping */
+        object-fit: contain !important; 
         background: transparent !important; 
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important; /* Apply shadow to video itself */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important; 
+    }
+    /* Fix for slider videos to not overflow */
+    .video-slider-wrapper .pf-video {
+        width: 25% !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+    }
+    /* Apply shadow and border radius to the container instead for index.html */
+    .pf-card .video-container {
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important; 
     }
     .portfolio-grid { 
         gap: 15px !important; 
-        padding: 0 5% !important; /* Give some breathing room to the grid, not the card */
+        padding: 0 5% !important; 
     }
 
     .process-container { flex-direction: column; }
