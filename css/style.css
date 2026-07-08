@@ -315,7 +315,7 @@ body {
     will-change: transform;
 
     @media (max-width: 480px) {
-        width: 300px !important;
+        width: 240px !important;
     }
 }
 
