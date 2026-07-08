@@ -1216,7 +1216,7 @@ body {
         flex: 1;
         width: auto;
         padding: 30px 15px;
-        min-height: auto;
+        min-height: 331px;
     }
     .profile-img-wrapper {
         width: 120px;
@@ -1679,7 +1679,7 @@ body {
 
     /* Pain Point Mobile - Balanced Aesthetic Refinement */
     .pain-grid { grid-template-columns: 1fr 1fr !important; gap: 15px !important; }
-    .pain-card { padding: 22px 6px !important; min-height: 150px !important; border-radius: 16px !important; display: flex !important; flex-direction: column !important; justify-content: center !important; }
+    .pain-card { padding: 22px 20px !important; min-height: 150px !important; border-radius: 16px !important; display: flex !important; flex-direction: column !important; justify-content: center !important; }
     .pain-card .pain-num { font-size: 0.9rem !important; margin-bottom: 12px !important; opacity: 0.5 !important; }
     .pain-card p { font-size: 0.80rem !important; line-height: 1.5 !important; opacity: 0.9 !important; letter-spacing: -1px; }
     .pain-card p strong { font-size: 0.8rem !important; margin-top: 5px !important; display: block !important; }
@@ -2078,7 +2078,7 @@ body {
     .sol-icon { font-size: 2.2rem !important; }
     .sol-content h3 { font-size: 1.6rem !important; margin-bottom: 12px !important; }
     .sol-content p { font-size: 0.95rem !important; line-height: 1.5 !important; }
-    .highlight { padding: 2px 6px !important; font-size: 0.9rem !important; }
+    .highlight { padding: 2px 6px !important; font-size: 0.9rem !important; margin: 6px 0 8px 0; }
 }
 
 /* Expansion Navigation Arrows */
