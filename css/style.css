@@ -301,6 +301,10 @@ body {
     transition: transform 0.1s ease-out;
     margin: 0 auto;
     filter: url(#nukki-filter);
+
+    @media (max-width: 768px) {
+        max-width: 300px;
+    }
 }
 
 .logo-layer {
@@ -1627,8 +1631,8 @@ body {
     * { cursor: auto !important; }
     .custom-cursor { display: none; }
 
-    .hero-subcopy { font-size: 1.05rem; margin-bottom: 20px; padding: 0 10px; }
-    .hero-subcopy .glow-text { font-size: 0.95rem; word-break: keep-all; display: block; }
+    .hero-subcopy { font-size: 1.15rem; margin-bottom: 20px; padding: 0 10px; }
+    .hero-subcopy .glow-text { font-size: 1.15rem; word-break: keep-all; display: block; }
 
     /* Mobile Logo - Preserving Glass Texture */
     .logo-layer {
