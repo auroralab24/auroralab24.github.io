@@ -314,8 +314,9 @@ body {
     backface-visibility: hidden;
     will-change: transform;
 
-    @media (max-width: 480px) {
-        width: 240px !important;
+    @media (max-width: 768px) {
+        max-width: 380px !important;
+        left: calc(50% - 190px);
     }
 }
 
