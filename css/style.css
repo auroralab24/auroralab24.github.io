@@ -313,10 +313,9 @@ body {
     pointer-events: none;
     backface-visibility: hidden;
     will-change: transform;
-    max-width: 300px !important;
 
     @media (max-width: 768px) {
-
+        max-width: 300px !important;
     }
 }
 
