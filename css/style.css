@@ -1775,39 +1775,39 @@ body {
 }
 
 .kakao-icon {
-    width: 44px;
-    height: 34px;
-    background: linear-gradient(145deg, #00FFD1, #A366FF);
+    width: 38px;
+    height: 38px;
+    /*background: linear-gradient(145deg, #00FFD1, #A366FF);*/
     /* Official oval bubble geometry */
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.85rem;
-    font-weight: 950;
-    color: #000;
-    position: relative;
-    box-shadow:
-        0 4px 12px rgba(0,0,0,0.3),
-        inset 0 1px 3px rgba(255,255,255,0.5);
-    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    /*border-radius: 50%;*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*font-size: 0.85rem;*/
+    /*font-weight: 950;*/
+    /*color: #000;*/
+    /*position: relative;*/
+    /*box-shadow:*/
+    /*    0 4px 12px rgba(0,0,0,0.3),*/
+    /*    inset 0 1px 3px rgba(255,255,255,0.5);*/
+    /*transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);*/
 }
 
 .kakao-icon::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 6px;
-    width: 11px;
-    height: 11px;
-    background: inherit;
+    /*content: '';*/
+    /*position: absolute;*/
+    /*bottom: -1px;*/
+    /*left: 6px;*/
+    /*width: 11px;*/
+    /*height: 11px;*/
+    /*background: inherit;*/
     /* Official Kakao beak tail */
-    clip-path: polygon(100% 0, 0 100%, 80% 100%);
+    /*clip-path: polygon(100% 0, 0 100%, 80% 100%);*/
 }
 
 .kakao-fab:hover .kakao-icon {
-    transform: scale(1.1) rotate(-3deg);
-    filter: brightness(1.1);
+    /*transform: scale(1.1) rotate(-3deg);*/
+    /*filter: brightness(1.1);*/
 }
 
 /* Mobile Responsive state */
@@ -1836,7 +1836,7 @@ body {
     }
 
     .kakao-icon {
-        width: 48px !important;
+        width: 38px !important;
         height: 38px !important;
         font-size: 0.95rem !important;
     }
