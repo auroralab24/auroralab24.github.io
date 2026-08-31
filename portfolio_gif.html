@@ -229,10 +229,10 @@
             <!-- Page Hero -->
             <div class="pf-page-hero">
                 <span class="pf-page-badge">✦ 02 // PORTFOLIO — GIF MOCKUPS</span>
-                <h1 class="pf-page-title">GIF MOCKUP<br>WORKS.</h1>
+                <h1 class="pf-page-title">SELECTED<br>WORKS.</h1>
                 <p class="pf-page-sub">
-                    오로라랩이 제작한 하이엔드 모바일 & 데스크톱 <span>GIF 목업 포트폴리오</span>입니다.<br>
-                    실제 서비스 동작과 브랜딩 연출을 한눈에 확인하세요.
+                    브랜드를 접하는 첫 이미지인 홈페이지.<br>
+                    <span>오로라랩이 브랜드의 첫인상을 만들어 드리겠습니다.</span>
                 </p>
                 <div class="pf-divider"></div>
                 <p class="pf-count-label">TOTAL 04 PROJECTS</p>
@@ -292,35 +292,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/aurora-engine.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-
-            // 1. Smooth Scroll
-            const lenis = new Lenis({
-                duration: 1.2,
-                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-                smooth: true,
-            });
-            function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-            requestAnimationFrame(raf);
-
-            if (typeof ScrollTrigger !== 'undefined') {
-                lenis.on('scroll', ScrollTrigger.update);
-                gsap.ticker.add((time) => { lenis.raf(time * 1000); });
-                gsap.ticker.lagSmoothing(0);
-            }
-
-            // 2. Custom Cursor
-            const cursor = document.getElementById("cursor");
-            if (cursor) {
-                const cursorX = gsap.quickTo(cursor, "left", { duration: 0.4, ease: "power3" });
-                const cursorY = gsap.quickTo(cursor, "top",  { duration: 0.4, ease: "power3" });
-                window.addEventListener("mousemove", (e) => { 
-                    cursorX(e.clientX); 
-                    cursorY(e.clientY); 
-                });
-        });
-    </script>
+    <script src="js/script.js?v=16"></script>
 
     <!-- Glassy Filter -->
     <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
