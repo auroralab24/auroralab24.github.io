@@ -334,7 +334,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ── Card Expansion Logic (Full Screen Zoom) ──
     pfCards.forEach(card => {
-        card.addEventListener('click', () => {
+        card.addEventListener('click', (e) => {
+            if (card.tagName === 'A' && card.hasAttribute('href') && card.getAttribute('href') !== '#') return;
             if (card.classList.contains('expanded')) {
                 // Shrink back
                 const state = card.getAttribute('data-flip-state');
@@ -377,8 +378,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const vh = window.innerHeight;
                 const vw = window.innerWidth;
-                const targetH = vh * 0.9;
-                const targetW = targetH * (4/5);
+                let targetW = Math.min(vw * 0.92, vh * 0.9 * (4/5));
+                let targetH = targetW * (5/4);
+                if (targetH > vh * 0.9) {
+                    targetH = vh * 0.9;
+                    targetW = targetH * (4/5);
+                }
                 const targetT = (vh - targetH) / 2;
                 const targetL = (vw - targetW) / 2;
 
