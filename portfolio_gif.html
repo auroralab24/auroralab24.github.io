@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="google-site-verification" content="mLLW34Q1RTOVZHtA4pPgpQUYQ6hDWejAw1tzw9n2h-U" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Lab | GIF Portfolio</title>
+    <meta name="description" content="Aurora Lab GIF Portfolio - 프리미엄 디지털 목업과 GIF 포트폴리오 작업물을 확인하세요.">
+    <meta property="og:title" content="Aurora Lab GIF Portfolio | Design Beyond Dimensions">
+    <meta property="og:description" content="오로라랩의 프리미엄 GIF 목업 포트폴리오입니다.">
+    <meta property="og:url" content="https://auroralab24.github.io/portfolio_gif.html">
+    <link rel="canonical" href="https://auroralab24.github.io/portfolio_gif.html">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;900&family=Outfit:wght@300;900&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css?v=16">
+    <style>
+        /* ── Portfolio Page Specific Styles ── */
+        .portfolio-page {
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        /* Page Hero Header */
+        .pf-page-hero {
+            text-align: center;
+            padding: 40px 5% 30px;
+            position: relative;
+        }
+
+        .pf-page-badge {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            color: var(--primary);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .pf-page-title {
+            font-family: var(--font-heading);
+            font-size: clamp(3.5rem, 8vw, 8rem);
+            font-weight: 900;
+            line-height: 1.0;
+            letter-spacing: -3px;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .pf-page-sub {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.5);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pf-page-sub span {
+            color: var(--secondary);
+        }
+
+        /* Divider */
+        .pf-divider {
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), transparent);
+            margin: 50px auto;
+        }
+
+        /* 3-Column Full Grid */
+        .pf-full-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 0 5% 100px;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .pf-full-grid .pf-thumb {
+            aspect-ratio: 4 / 3;
+        }
+
+        /* Card Counter Label */
+        .pf-count-label {
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.3);
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+
+        /* Back Button */
+        .back-btn-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: 60px 5% 0;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 36px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 100px;
+            color: rgba(255,255,255,0.6);
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-btn:hover {
+            background: rgba(163,102,255,0.15);
+            border-color: var(--primary);
+            color: #fff;
+            transform: translateX(-4px);
+        }
+
+        .back-arrow {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-btn:hover .back-arrow {
+            transform: translateX(-4px);
+        }
+
+        /* Stagger fade-in for cards */
+        @keyframes cardReveal {
+            from { opacity: 0; transform: translateY(40px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .pf-full-grid .pf-card {
+            animation: cardReveal 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .pf-full-grid .pf-card:nth-child(1) { animation-delay: 0.05s; }
+        .pf-full-grid .pf-card:nth-child(2) { animation-delay: 0.12s; }
+        .pf-full-grid .pf-card:nth-child(3) { animation-delay: 0.19s; }
+        .pf-full-grid .pf-card:nth-child(4) { animation-delay: 0.26s; }
+
+        /* Page transition overlay */
+        .page-transition {
+            position: fixed;
+            inset: 0;
+            background: #000;
+            z-index: 99998;
+            pointer-events: none;
+            animation: pageIn 0.6s ease forwards;
+        }
+
+        @keyframes pageIn {
+            from { opacity: 1; }
+            to   { opacity: 0; }
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .pf-full-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+                padding: 0 4% 60px;
+            }
+            .pf-page-title { font-size: clamp(2.5rem, 10vw, 5rem); letter-spacing: -1px; }
+        }
+
+        @media (max-width: 560px) {
+            .pf-full-grid { grid-template-columns: 1fr; }
+            .pf-page-hero { padding: 60px 5% 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- Background Engine -->
+    <div class="bg-engine">
+        <div class="bg-logo"></div>
+    </div>
+
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+
+    <!-- Ticker Top -->
+    <div class="top-ticker">
+        <div class="track">
+            <span>✧ DESIGN BEYOND DIMENSIONS</span>
+            <span>✦</span> <span class="glow-text">CREATING DIGITAL UNIVERSES</span>
+            <span>✦</span> <span>HIGH-END INTERACTION</span>
+            <span>✧</span> <span class="glow-text">AURORA LAB.</span>
+            <span>✧ DESIGN BEYOND DIMENSIONS</span>
+            <span>✦</span> <span class="glow-text">CREATING DIGITAL UNIVERSES</span>
+            <span>✦</span> <span>HIGH-END INTERACTION</span>
+            <span>✧</span> <span class="glow-text">AURORA LAB.</span>
+            <span>✧ DESIGN BEYOND DIMENSIONS</span>
+            <span>✦</span> <span class="glow-text">CREATING DIGITAL UNIVERSES</span>
+            <span>✦</span> <span>HIGH-END INTERACTION</span>
+            <span>✧</span> <span class="glow-text">AURORA LAB.</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <img src="images/logo.png" alt="Aurora Lab" class="nav-logo">
+        <nav class="nav-links">
+            <a href="index.html#about" class="magnetic-btn">ABOUT</a>
+            <a href="portfolio.html" class="magnetic-btn">WORKS</a>
+            <a href="index.html#pricing" class="magnetic-btn">PRICING</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="portfolio-page">
+
+            <!-- Page Hero -->
+            <div class="pf-page-hero">
+                <span class="pf-page-badge">✦ 02 // PORTFOLIO — GIF MOCKUPS</span>
+                <h1 class="pf-page-title">GIF MOCKUP<br>WORKS.</h1>
+                <p class="pf-page-sub">
+                    오로라랩이 제작한 하이엔드 모바일 & 데스크톱 <span>GIF 목업 포트폴리오</span>입니다.<br>
+                    실제 서비스 동작과 브랜딩 연출을 한눈에 확인하세요.
+                </p>
+                <div class="pf-divider"></div>
+                <p class="pf-count-label">TOTAL 04 PROJECTS</p>
+            </div>
+
+            <!-- 3-Column Portfolio Grid (4 GIF Cards) -->
+            <div class="pf-full-grid">
+
+                <!-- Card 1 (Coca-Cola GIF) -->
+                <a href="https://auroralab24.github.io/coca-cola/" target="_blank" rel="noopener noreferrer" class="pf-card pf-link-card">
+                    <div class="pf-thumb" style="display: flex; align-items: center; justify-content: center; background: rgba(10, 10, 10, 0.8); overflow: hidden;">
+                        <img src="images/coca-cola-목업만.gif" alt="코카콜라 상세페이지" style="width: 100%; height: 100%; object-fit: contain; transform: scale(1.08) translateX(-3.5%); transition: transform 0.4s ease;">
+                    </div>
+                </a>
+
+                <!-- Card 2 (Sofa GIF) -->
+                <a href="https://auroralab24.github.io/sofa/" target="_blank" rel="noopener noreferrer" class="pf-card pf-link-card">
+                    <div class="pf-thumb" style="display: flex; align-items: center; justify-content: center; background: rgba(10, 10, 10, 0.8); overflow: hidden;">
+                        <img src="images/sofa-목업만.gif" alt="소파 상세페이지" style="width: 100%; height: 100%; object-fit: contain; transform: scale(1.08) translateX(-3.5%); transition: transform 0.4s ease;">
+                    </div>
+                </a>
+
+                <!-- Card 3 (Eye GIF) -->
+                <a href="https://auroralab24.github.io/Eye/" target="_blank" rel="noopener noreferrer" class="pf-card pf-link-card">
+                    <div class="pf-thumb" style="display: flex; align-items: center; justify-content: center; background: rgba(10, 10, 10, 0.8); overflow: hidden;">
+                        <img src="images/Eye-목업만_속도.gif?v=2" alt="안과 상세페이지" style="width: 100%; height: 100%; object-fit: contain; transform: scale(1.08) translateX(-3.5%); transition: transform 0.4s ease;">
+                    </div>
+                </a>
+
+                <!-- Card 4 (Hotel GIF) -->
+                <a href="https://auroralab24.github.io/Hotel/" target="_blank" rel="noopener noreferrer" class="pf-card pf-link-card">
+                    <div class="pf-thumb" style="display: flex; align-items: center; justify-content: center; background: rgba(10, 10, 10, 0.8); overflow: hidden;">
+                        <img src="images/Hotel-목업만.gif" alt="호텔 상세페이지" style="width: 100%; height: 100%; object-fit: contain; transform: scale(1.08) translateX(-3.5%); transition: transform 0.4s ease;">
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- Back Button -->
+            <div class="back-btn-wrapper">
+                <a href="index.html" class="back-btn magnetic-btn">
+                    <span class="back-arrow">←</span> 메인으로 돌아가기
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Kakao FAB -->
+    <a href="https://open.kakao.com/o/sgb5nVmi" target="_blank" rel="noopener noreferrer" class="kakao-fab">
+        <span class="fab-text">카카오톡 문의하기</span>
+        <div class="kakao-icon">TALK</div>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/aurora-engine.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // 1. Smooth Scroll
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smooth: true,
+            });
+            function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+            requestAnimationFrame(raf);
+
+            if (typeof ScrollTrigger !== 'undefined') {
+                lenis.on('scroll', ScrollTrigger.update);
+                gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+                gsap.ticker.lagSmoothing(0);
+            }
+
+            // 2. Custom Cursor
+            const cursor = document.getElementById("cursor");
+            if (cursor) {
+                const cursorX = gsap.quickTo(cursor, "left", { duration: 0.4, ease: "power3" });
+                const cursorY = gsap.quickTo(cursor, "top",  { duration: 0.4, ease: "power3" });
+                window.addEventListener("mousemove", (e) => { 
+                    cursorX(e.clientX); 
+                    cursorY(e.clientY); 
+                });
+            }
+
+        });
+    </script>
+
+    <!-- Glassy Filter -->
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+        <filter id="nukki-filter" color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix" values="1 0 0 0 0
+                                                 0 1 0 0 0
+                                                 0 0 1 0 0
+                                                 0.8 0.8 0.8 0 0" result="mask"/>
+            <feComposite operator="in" in="SourceGraphic" in2="mask" />
+            <feColorMatrix type="saturate" values="0.4" />
+            <feComponentTransfer>
+                <feFuncR type="gamma" exponent="1.0" amplitude="1.2"/>
+                <feFuncG type="gamma" exponent="1.0" amplitude="1.2"/>
+                <feFuncB type="gamma" exponent="1.0" amplitude="1.2"/>
+            </feComponentTransfer>
+        </filter>
+    </svg>
+</body>
+</html>
