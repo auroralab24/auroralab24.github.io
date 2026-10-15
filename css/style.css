@@ -1343,10 +1343,10 @@ body {
         flex-direction: row;
         gap: 4px;
         justify-content: center;
-        align-items: center;
+        align-items: stretch; /* equal card heights */
     }
     .team-member {
-        flex: 1;
+        flex: 1 1 0; /* equal card widths */
         width: auto;
         padding: 20px 8px;
         min-height: auto;
@@ -1374,6 +1374,7 @@ body {
         width: 24px;
         height: 24px;
         margin: 0;
+        align-self: center;
     }
     .team-plus {
         font-size: 1.3rem;
